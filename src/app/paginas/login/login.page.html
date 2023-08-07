@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login de usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit">INGRESAR</ion-button>
+  </form>
+
+  <ion-button class="btn-google" expand="full" (click)="onClick()">
+    <ion-icon slot="start" name="logo-google"></ion-icon>
+    INICIAR SESSION CON GOOGLE
+  </ion-button>
+
+  <ion-button expand="full" routerLink="/register">Registrarse</ion-button>
+</ion-content>

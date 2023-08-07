@@ -1,0 +1,33 @@
+ion-header {
+    ion-toolbar {
+      --background: #007bff; /* Cambia el color del header según tus preferencias */
+      color: white;
+    }
+  
+    ion-title {
+      font-size: 24px;
+    }
+  }
+  
+  ion-content {
+    padding: 20px;
+  }
+  
+  form {
+    ion-item {
+      --ion-text-color: #007bff; /* Cambia el color del texto en los campos */
+    }
+  
+    ion-button[type="submit"] {
+      margin-top: 20px;
+      --background: #007bff; /* Cambia el color del botón según tus preferencias */
+      color: white;
+    }
+  
+    .btn-google {
+      margin-top: 20px;
+      --background: #db4437; /* Cambia el color del botón de Google según tus preferencias */
+      color: white;
+    }
+  }
+  

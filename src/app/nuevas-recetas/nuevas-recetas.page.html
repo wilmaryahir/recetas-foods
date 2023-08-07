@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main"></ion-back-button>
+    </ion-buttons>
+    <ion-title>nuevas-recetas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Título de la receta</ion-label>
+          <ion-input [(ngModel)]="tituloReceta"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Descripción de la preparación</ion-label>
+          <ion-textarea [(ngModel)]="descripcionReceta" rows="6"></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="primary" (click)="agregarReceta()">Agregar Receta</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Aquí podrías mostrar la lista de recetas agregadas -->
+  <ion-list>
+    <ion-item *ngFor="let receta of listaRecetas">
+      <ion-label>
+        <h2>{{ receta.titulo }}</h2>
+        <p>{{ receta.descripcion }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botón de regreso al main -->
+  <ion-buttons slot="start">
+    <ion-button [routerLink]="['/main']">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      Volver al Main
+    </ion-button>
+  </ion-buttons>
+</ion-content>

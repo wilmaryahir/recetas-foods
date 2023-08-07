@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons >
+      <ion-back-button defaultHref="/"></ion-back-button> <!-- Agrega el botón de retroceso aquí -->
+    </ion-buttons>
+    <ion-title>CHEF VIRTUAL</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let receta of recetas">
+      <ion-label>
+        <h2>{{ receta.titulo }}</h2>
+        <p>{{ receta.indicaciones }}</p>
+      </ion-label>
+      <ion-button expand="block" color="primary" [routerLink]="['/indicaciones', receta.recetaId]">
+        <ion-icon name="arrow-forward-outline" slot="start"></ion-icon>
+        Ver Indicaciones
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" color="primary" [routerLink]="['/menu']">
+    <ion-icon name="menu-outline" slot="start"></ion-icon>
+    Menú
+  </ion-button>
+  <ion-button expand="block" color="primary" [routerLink]="['/about']">
+    <ion-icon name="person-outline" slot="start"></ion-icon>
+    About
+  </ion-button>
+  <ion-button expand="block" color="primary" (click)="goHome()">
+    <ion-icon name="home-outline" slot="start"></ion-icon>
+    Regresar a Inicio
+  </ion-button>
+</ion-content>

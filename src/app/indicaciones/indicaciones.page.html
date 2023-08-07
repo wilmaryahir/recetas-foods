@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Indicaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="receta">
+    <ion-card-header>
+      <ion-card-title><strong>{{ receta.titulo }}</strong></ion-card-title>
+    </ion-card-header>
+    <img [src]="receta.imagenUrl" alt="Imagen de receta">
+    <ion-card-content>
+      <h2>Ingredientes:</h2>
+      <ul>
+        <li *ngFor="let ingrediente of receta.ingredientes">{{ ingrediente }}</li>
+      </ul>
+      <h2><strong>Preparación:</strong></h2>
+      <p>{{ receta.preparacion }}</p>
+      <ion-button expand="block" color="primary" (click)="openVideoUrl(receta.video)">
+        <ion-icon name="play-outline" slot="start"></ion-icon>
+        Ver Video
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" color="primary" (click)="goBack()">
+    <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+    Regresar a Recetas
+  </ion-button>
+</ion-content>
